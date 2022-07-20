@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>CALCULADORA</title>
+</head>
+
+<style>
+
+
+
+    
+th{
+    text-align: center;
+    font-size: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#valor_numero{
+    border-color: blue;
+}
+
+
+
+#numero{
+    width: 100px;
+    height: 50px;
+    border: 1px solid blueviolet;
+    font-size: 40px;
+    border-radius: 10px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    text-align: center;
+
+}
+
+#numero:hover{
+    background-color: blueviolet;
+    color: white;
+}
+   body{
+    background-image: url(https://img.bekiaviajes.com/articulos/portada/83000/83864-h.jpg);
+    background-size: cover;
+   }
+
+   #resultado{
+    width: 400px;
+    height: 50px;
+    border: 1px solid rgb(214, 6, 255);
+    border-radius: 10px;
+    font-size: 40px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+   }
+
+   #igual{
+    width: 200px;
+    height: 50px;
+    border: 1px solid blueviolet;
+    font-size: 40px;
+    border-radius: 10px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    text-align: center;
+
+   }
+
+   #igual:hover{
+    background-color: blueviolet;
+    color: white;
+}
+
+h1{
+    -webkit-text-stroke: 2px purple;
+    font-size: 100px;
+    text-align: center;
+    color: white;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+#clear{
+    width: 100px;
+    height: 50px;
+    border: 1px solid blueviolet;
+    font-size: 40px;
+    border-radius: 10px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    text-align: center;
+
+}
+
+</style>
+<body>
+    <center>
+    <h1>CALCULADORA</h1>
+    <table>
+        <tr>
+            <td colspan="4">
+                <form name="calculadora">
+                <input type="text" id="resultado" maxlength="20" value="" readonly="true" name="input">
+            </td>
+        </tr>
+           
+        <tr>
+            <td>
+                <input type="Button" id="numero" name="siete" value=" 7 "  onclick="calculadora.input.value+='7'">
+            </td>
+            <td>
+                <input type="Button" id="numero"  name="ocho" value="8"  onclick="calculadora.input.value += '8'">
+            </td>
+            <td>
+                <input type="Button" id="numero" value="9"  onclick="calculadora.input.value += '9'">
+            </td>
+            <td>
+                <input type="Button" id="numero" value="/"   onclick="calculadora.input.value += '/'">
+            </td>
+            <td>
+                <input type="button" id="numero" value="sin" onClick="sen()">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <input type="Button" id="numero" value="4"  onclick="calculadora.input.value += '4'">
+            </td>
+            <td>
+                <input type="Button" id="numero" value="5"   onclick="calculadora.input.value += '5'">
+            </td>
+            <td>
+                <input type="Button" id="numero" value="6"   onclick="calculadora.input.value += '6'">
+            </td>
+            <td>
+                <input type="Button" id="numero" value="*"   onclick="calculadora.input.value += '*'">
+            </td>
+            <td>
+                <input type="button" id="numero" value="cos" onClick="cos()">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <input type="Button" id="numero" value="1"   onclick="calculadora.input.value += '1'">
+            </td>
+            <td>
+                <input type="Button" id="numero" value="2"   onclick="calculadora.input.value += '2'">
+            </td>
+            <td>
+                <input type="Button" id="numero" value="3"    onclick="calculadora.input.value += '3'">
+            </td>
+            <td>
+                <input type="Button" id="numero" value="-"   onclick="calculadora.input.value += '-'">
+            </td>
+            <td>
+                <input type="button" id="numero" value="√" onClick="raizc()">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <input type="Button" id="numero" value="0"   onclick="calculadora.input.value+='0'">
+            </td>
+         <td colspan="2">
+                <input type="Button" id="igual" value="="   onclick="calculadora.input.value = eval(calculadora.input.value)">
+            </td>
+            <td>
+            <input type="Button" id="numero" value="+"  onclick="calculadora.input.value += '+'">
+            </td>
+            <td>
+                <input type="button" id="numero" value="^2" onClick="potency()">
+                </td>
+                <td>
+                    <input type="Button" id="clear" value=" C " onclick="calculadora.input.value = ''">
+                </td>
+                   
+        </tr>
+    </form>
+
+    <script type="text/javascript">
+        function raizc(){
+            var r = document.getElementById('resultado').value;
+            var x = Math.sqrt(r)
+            calculadora.resultado.value=x;
+        }
+        function potency(){
+            var e = document.getElementById('resultado').value;
+            var p = Math.pow(e,2)
+            calculadora.resultado.value=p;
+        }
+        function tangent(){
+        var t = document.getElementById("resultado").value;
+        var prueba= Math.tan(t, 1)
+        calculadora.resultado.value= prueba;
+        }
+        function cos(){
+        var c = document.getElementById("resultado").value;
+        var prueba= Math.cos(c,10)
+        calculadora.resultado.value= prueba;
+        }
+        function sen(){
+        var s = document.getElementById("resultado").value;
+        var prueba= Math.sin(s,2)
+        calculadora.resultado.value= prueba;
+        }
+       
+    </script>
+    </table>
+</center>
+</body>
+</html>
+
+
